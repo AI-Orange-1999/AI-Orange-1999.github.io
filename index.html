@@ -5,56 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sinnesquelle - Wellness & Massage</title>
     
-    <!-- Google Fonts für moderne Typografie -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CSS via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        sage: {
-                            100: '#eef2ee',
-                            200: '#dce5dc',
-                            500: '#8ba793',
-                            600: '#6f8a77',
-                            900: '#3a4e41',
-                        },
-                        sand: {
-                            50: '#faf9f6',
-                            100: '#f5f0e6',
-                        }
+                        sage: { 100: '#eef2ee', 200: '#dce5dc', 500: '#8ba793', 600: '#6f8a77', 900: '#3a4e41' },
+                        sand: { 50: '#faf9f6', 100: '#f5f0e6' }
                     },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    animation: {
-                        'bounce-slow': 'bounce 3s infinite',
-                    }
+                    fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    animation: { 'bounce-slow': 'bounce 3s infinite' }
                 }
             }
         }
     </script>
-    <style>
-        html { scroll-behavior: smooth; }
-    </style>
+    <style>html { scroll-behavior: smooth; }</style>
 </head>
 <body class="bg-sand-50 text-gray-800 font-sans antialiased">
 
     <!-- 1. Hero-Sektion -->
     <header class="relative bg-sage-900 bg-cover bg-center h-[90vh] flex flex-col items-center justify-center" style="background-image: linear-gradient(rgba(58, 78, 65, 0.7), rgba(58, 78, 65, 0.7)), url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
-        <div class="text-center px-6 max-w-3xl transform transition duration-1000 translate-y-0 opacity-100">
+        <div class="text-center px-6 max-w-3xl">
             <h1 class="text-4xl md:text-6xl font-serif text-white mb-6 leading-tight drop-shadow-md">Willkommen bei Sinnesquelle</h1>
             <p class="text-lg md:text-xl text-sage-100 mb-10 font-light drop-shadow">Entspannung Pur Erleben – Dein Moment der absoluten Ruhe.</p>
             <a href="#buchung" class="inline-block bg-white text-sage-900 font-semibold px-8 py-4 rounded-full shadow-lg hover:bg-sage-100 hover:scale-105 transition-all duration-300">
                 Termin vereinbaren
             </a>
         </div>
-        
-        <!-- Wippender Scroll-Pfeil -->
         <div class="absolute bottom-10 animate-bounce-slow">
             <a href="#leistungen" class="text-white opacity-70 hover:opacity-100 transition-opacity">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
@@ -64,73 +43,108 @@
 
     <!-- 2. Leistungen & Preise -->
     <section id="leistungen" class="py-24 px-6 max-w-7xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl md:text-4xl font-serif text-sage-900 mb-4">Mein Angebot</h2>
+        <div class="text-center mb-8">
+            <h2 class="text-3xl md:text-4xl font-serif text-sage-900 mb-4">Preisliste & Angebot</h2>
             <div class="w-24 h-1 bg-sage-500 mx-auto rounded"></div>
         </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
-            <!-- Karte 1 -->
-            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-sage-100 hover:shadow-xl hover:border-sage-200 transition-all duration-500 flex flex-col text-center cursor-default transform hover:-translate-y-2">
-                <div class="overflow-hidden w-32 h-32 mx-auto rounded-full mb-6 shadow-md">
-                    <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80" alt="Hot Stone Massage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+
+        <!-- Kategorie: Massagen -->
+        <h3 class="text-2xl font-serif text-sage-900 mb-8 mt-16 text-center border-b border-sage-200 pb-4">Massagen</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col text-center">
+                <div class="overflow-hidden w-24 h-24 mx-auto rounded-full mb-4"><img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=400&q=80" alt="Rücken-Nacken" class="w-full h-full object-cover"></div>
+                <h4 class="font-serif text-sage-900 mb-1">Rücken-Nacken</h4>
+                <p class="text-gray-500 text-sm mb-4">30 Minuten</p>
+                <div class="mt-auto pt-4 border-t border-sage-100"><span class="text-xl font-bold text-sage-600">35 €</span></div>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col text-center">
+                <div class="overflow-hidden w-24 h-24 mx-auto rounded-full mb-4"><img src="https://images.unsplash.com/photo-1611078817757-087037f59d28?auto=format&fit=crop&w=400&q=80" alt="Klassische Ganzkörper" class="w-full h-full object-cover"></div>
+                <h4 class="font-serif text-sage-900 mb-1">Klassische Ganzkörper</h4>
+                <p class="text-gray-500 text-sm mb-4">60 Minuten</p>
+                <div class="mt-auto pt-4 border-t border-sage-100"><span class="text-xl font-bold text-sage-600">65 €</span></div>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col text-center">
+                <div class="overflow-hidden w-24 h-24 mx-auto rounded-full mb-4"><img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80" alt="Hot Stone" class="w-full h-full object-cover"></div>
+                <h4 class="font-serif text-sage-900 mb-1">Hot Stone Massage</h4>
+                <p class="text-gray-500 text-sm mb-4">60 Minuten</p>
+                <div class="mt-auto pt-4 border-t border-sage-100"><span class="text-xl font-bold text-sage-600">65 €</span></div>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col text-center">
+                <div class="overflow-hidden w-24 h-24 mx-auto rounded-full mb-4"><img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=400&q=80" alt="Lomi Lomi Nui" class="w-full h-full object-cover"></div>
+                <h4 class="font-serif text-sage-900 mb-1">Lomi Lomi Nui <br><span class="text-sm font-light">(Kukua)</span></h4>
+                <p class="text-gray-500 text-sm mb-4">90 Minuten</p>
+                <div class="mt-auto pt-4 border-t border-sage-100"><span class="text-xl font-bold text-sage-600">95 €</span></div>
+            </div>
+        </div>
+
+        <!-- Kategorie: Spezialbehandlungen -->
+        <h3 class="text-2xl font-serif text-sage-900 mb-8 mt-16 text-center border-b border-sage-200 pb-4">Spezialbehandlungen</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col text-center">
+                <div class="overflow-hidden w-24 h-24 mx-auto rounded-full mb-4"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=400&q=80" alt="Hollywood Lifting" class="w-full h-full object-cover"></div>
+                <h4 class="font-serif text-sage-900 mb-1">Hollywood Lifting</h4>
+                <p class="text-gray-500 text-sm mb-4">Gesichtsmassage</p>
+                <div class="mt-auto pt-4 border-t border-sage-100"><span class="text-xl font-bold text-sage-600">55 €</span></div>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col text-center">
+                <div class="overflow-hidden w-24 h-24 mx-auto rounded-full mb-4"><img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=400&q=80" alt="Breuß-Massage" class="w-full h-full object-cover"></div>
+                <h4 class="font-serif text-sage-900 mb-1">Breuß-Massage</h4>
+                <p class="text-gray-500 text-sm mb-4">30 Minuten</p>
+                <div class="mt-auto pt-4 border-t border-sage-100"><span class="text-xl font-bold text-sage-600">35 €</span></div>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col text-center">
+                <div class="overflow-hidden w-24 h-24 mx-auto rounded-full mb-4"><img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=400&q=80" alt="Geistiges Heilen" class="w-full h-full object-cover"></div>
+                <h4 class="font-serif text-sage-900 mb-1">Geistiges Heilen</h4>
+                <p class="text-gray-500 text-sm mb-4">50 Minuten</p>
+                <div class="mt-auto pt-4 border-t border-sage-100"><span class="text-xl font-bold text-sage-600">60 €</span></div>
+            </div>
+        </div>
+
+        <!-- Kategorie: Maderotherapie -->
+        <h3 class="text-2xl font-serif text-sage-900 mb-8 mt-16 text-center border-b border-sage-200 pb-4">Maderotherapie</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="overflow-hidden w-20 h-20 rounded-full flex-shrink-0"><img src="https://images.unsplash.com/photo-1526930382372-67be22e11894?auto=format&fit=crop&w=400&q=80" alt="Madero Beine & Po" class="w-full h-full object-cover"></div>
+                    <div>
+                        <h4 class="font-serif text-sage-900 text-lg">Beine & Po</h4>
+                        <p class="text-gray-500 text-sm">Formung & Straffung</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-serif text-sage-900 mb-2">Hot Stone Massage</h3>
-                <p class="text-gray-600 mb-6 font-light text-sm">Tiefenwirksame Wärme durch Basaltsteine zur Lockerung der Muskulatur.</p>
-                <div class="mt-auto pt-4 border-t border-sage-100 group-hover:border-sage-200 transition-colors">
-                    <span class="text-xl font-bold text-sage-600">60 €</span>
+                <div class="mt-auto pt-4 border-t border-sage-100 flex justify-between items-center">
+                    <span class="text-xl font-bold text-sage-600">45 €</span>
+                    <span class="text-sm font-medium bg-sage-100 text-sage-900 px-3 py-1 rounded-full">Paket 5+1 Gratis: 225 €</span>
                 </div>
             </div>
-
-            <!-- Karte 2 -->
-            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-sage-100 hover:shadow-xl hover:border-sage-200 transition-all duration-500 flex flex-col text-center cursor-default transform hover:-translate-y-2">
-                <div class="overflow-hidden w-32 h-32 mx-auto rounded-full mb-6 shadow-md">
-                    <img src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&w=400&q=80" alt="Lomi Lomi Massage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-sage-100 hover:shadow-lg transition-all flex flex-col">
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="overflow-hidden w-20 h-20 rounded-full flex-shrink-0"><img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=400&q=80" alt="Madero Bauch, Beine & Po" class="w-full h-full object-cover"></div>
+                    <div>
+                        <h4 class="font-serif text-sage-900 text-lg">Bauch, Beine & Po</h4>
+                        <p class="text-gray-500 text-sm">Ganzheitliche Konturierung</p>
+                    </div>
                 </div>
-                <h3 class="text-xl font-serif text-sage-900 mb-2">Lomi Lomi Massage</h3>
-                <p class="text-gray-600 mb-6 font-light text-sm">Traditionelle hawaiianische Massage für fließende, tiefe Entspannung.</p>
-                <div class="mt-auto pt-4 border-t border-sage-100 group-hover:border-sage-200 transition-colors">
-                    <span class="text-xl font-bold text-sage-600">70 €</span>
-                </div>
-            </div>
-
-            <!-- Karte 3 -->
-            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-sage-100 hover:shadow-xl hover:border-sage-200 transition-all duration-500 flex flex-col text-center cursor-default transform hover:-translate-y-2">
-                <div class="overflow-hidden w-32 h-32 mx-auto rounded-full mb-6 shadow-md">
-                    <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=400&q=80" alt="Breuss Massage" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <h3 class="text-xl font-serif text-sage-900 mb-2">Breuss Massage</h3>
-                <p class="text-gray-600 mb-6 font-light text-sm">Sanfte, energetische Rückenmassage zur Regeneration der Bandscheiben.</p>
-                <div class="mt-auto pt-4 border-t border-sage-100 group-hover:border-sage-200 transition-colors">
-                    <span class="text-xl font-bold text-sage-600">30 €</span>
+                <div class="mt-auto pt-4 border-t border-sage-100 flex justify-between items-center">
+                    <span class="text-xl font-bold text-sage-600">55 €</span>
+                    <span class="text-sm font-medium bg-sage-100 text-sage-900 px-3 py-1 rounded-full">Paket 5+1 Gratis: 275 €</span>
                 </div>
             </div>
-
-            <!-- Karte 4 -->
-            <div class="group bg-white p-8 rounded-3xl shadow-sm border border-sage-100 hover:shadow-xl hover:border-sage-200 transition-all duration-500 flex flex-col text-center cursor-default transform hover:-translate-y-2">
-                <div class="overflow-hidden w-32 h-32 mx-auto rounded-full mb-6 shadow-md">
-                    <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=400&q=80" alt="Geistiges Heilen" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                </div>
-                <h3 class="text-xl font-serif text-sage-900 mb-2">Geistiges Heilen</h3>
-                <p class="text-gray-600 mb-6 font-light text-sm">Energiearbeit zur ganzheitlichen Aktivierung der Selbstheilungskräfte.</p>
-                <div class="mt-auto pt-4 border-t border-sage-100 group-hover:border-sage-200 transition-colors">
-                    <span class="text-xl font-bold text-sage-600">50 €</span>
-                </div>
-            </div>
-
         </div>
     </section>
 
-    <!-- 3. Über mich / Philosophie -->
+    <!-- Zitat-Banner -->
+    <div class="bg-sage-900 text-center py-12 px-6">
+        <p class="text-sage-100 font-serif text-xl md:text-2xl max-w-3xl mx-auto italic">
+            "Individuelle Betreuung: Ich gehe stets individuell auf die Bedürfnisse jedes einzelnen Kunden ein."
+        </p>
+    </div>
+
+    <!-- 3. Über mich -->
     <section id="ueber-mich" class="bg-sage-100 py-24 px-6 relative overflow-hidden">
-        <!-- Dekoratives Hintergrund-Element -->
         <div class="absolute top-0 right-0 w-64 h-64 bg-sage-200 rounded-full mix-blend-multiply filter blur-3xl opacity-50 transform translate-x-1/2 -translate-y-1/2"></div>
-        
         <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-12 relative z-10">
             <div class="w-full md:w-1/2">
                 <div class="aspect-square rounded-full overflow-hidden shadow-2xl border-4 border-white">
-                    <!-- Eigenes Bild von Nicole integriert -->
                     <img src="nicole.jpg" alt="Nicole Ihrig - Sinnesquelle" class="w-full h-full object-cover">
                 </div>
             </div>
@@ -146,17 +160,14 @@
         </div>
     </section>
 
-    <!-- 4. Kontakt, Anfahrt & Buchung -->
+    <!-- 4. Kontakt & Buchung -->
     <section id="buchung" class="py-24 px-6 max-w-7xl mx-auto relative">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             
-            <!-- Kontaktdaten -->
             <div class="sticky top-10">
                 <h2 class="text-4xl font-serif text-sage-900 mb-8">Kontakt & Anfahrt</h2>
-                
                 <div class="bg-sage-900 text-white p-10 rounded-3xl shadow-xl relative overflow-hidden">
                     <div class="absolute top-0 right-0 w-32 h-32 bg-sage-600 rounded-full mix-blend-screen filter blur-2xl opacity-50 transform translate-x-1/2 -translate-y-1/2"></div>
-                    
                     <h3 class="text-2xl font-serif mb-6 border-b border-sage-600 pb-4">Nicole Ihrig</h3>
                     
                     <div class="space-y-6 font-light">
@@ -164,8 +175,16 @@
                             <svg class="w-6 h-6 text-sage-200 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             <div>
                                 <strong class="block text-sage-100 mb-1">Sinnesquelle</strong>
-                                Birkenhöhe 37<br>
-                                64760 Oberzent
+                                Birkenhöhe 37<br>64760 Oberzent
+                            </div>
+                        </div>
+
+                        <!-- Neue Telefonnummer hinzugefügt -->
+                        <div class="flex items-start gap-4 pt-4 border-t border-sage-600/50">
+                            <svg class="w-6 h-6 text-sage-200 mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <div>
+                                <strong class="block text-sage-100 mb-1">Telefon / WhatsApp</strong>
+                                <a href="tel:+491743343478" class="hover:text-white transition-colors">+49 174 3343478</a>
                             </div>
                         </div>
                         
@@ -173,26 +192,21 @@
                             <svg class="w-6 h-6 text-sage-200 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             <div>
                                 <strong class="block text-sage-100 mb-1">Öffnungszeiten</strong>
-                                Termine nach Vereinbarung über das Buchungsportal
+                                Termine nach Vereinbarung
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Buchungs-Widget Bereich -->
-            <div class="bg-white p-8 rounded-3xl shadow-lg border border-sage-100 flex flex-col justify-center transform hover:shadow-xl transition-shadow duration-300">
+            <!-- Buchungs-Widget -->
+            <div class="bg-white p-8 rounded-3xl shadow-lg border border-sage-100 flex flex-col justify-center">
                 <h3 class="text-2xl font-serif text-sage-900 mb-6 text-center">Termin online buchen</h3>
                 <div class="w-full bg-sand-50 rounded-2xl overflow-hidden border border-sand-100">
-                    
-<!-- Calendly inline widget begin -->
-<div class="calendly-inline-widget w-full" data-url="https://calendly.com/sinnesquelle?background_color=faf9f6&text_color=3a4e41" style="min-width:320px; height:700px; width:100%;"></div>
-<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-<!-- Calendly inline widget end -->
-                    
+                    <div class="calendly-inline-widget w-full" data-url="https://calendly.com/sinnesquelle?background_color=faf9f6&text_color=3a4e41" style="min-width:320px; height:700px; width:100%;"></div>
+                    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -208,5 +222,4 @@
     </footer>
 
 </body>
-</html>     
- 
+</html>
