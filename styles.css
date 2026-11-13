@@ -1,0 +1,179 @@
+/* Sinnesquelle – gemeinsames Stylesheet
+   Schrift: Lora (SIL Open Font License), lokal eingebunden – keine Verbindung zu Google. */
+
+@font-face {
+  font-family: "Lora";
+  src: url("fonts/lora-var.woff") format("woff");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Lora";
+  src: url("fonts/lora-italic-var.woff") format("woff");
+  font-weight: 400 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* ---------- Design-Tokens ---------- */
+:root {
+  --tanne: #1f3329;        /* tiefes Tannengrün: Header, Hero, Footer */
+  --tanne-hell: #2d4739;
+  --salbei: #4b6354;       /* Salbei, dunkel genug für Text auf Papier (AA) */
+  --salbei-weich: #c9d4cb; /* Linien, Trenner */
+  --papier: #f3f5f0;       /* Seitenhintergrund */
+  --weiss: #fbfcf9;
+  --tinte: #22302a;        /* Fließtext */
+  --kerze: #e3a94f;        /* Kerzenlicht: einziger Akzent */
+  --kerze-dunkel: #8a5a14; /* Akzent als Text auf hellem Grund (AA) */
+
+  --serif: "Lora", Georgia, "Times New Roman", serif;
+  --rand: clamp(1.25rem, 5vw, 3rem);
+  --max: 72rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 5rem; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--tinte);
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  line-height: 1.7;
+  font-variant-numeric: lining-nums;
+  text-rendering: optimizeLegibility;
+}
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; }
+h1, h2, h3, p, ul, dl, figure, blockquote { margin: 0; }
+ul { padding: 0; list-style: none; }
+h1, h2, h3 { font-weight: 500; line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
+p { text-wrap: pretty; }
+
+:focus-visible { outline: 3px solid var(--kerze); outline-offset: 3px; border-radius: 2px; }
+
+.skip {
+  position: absolute; left: 1rem; top: -4rem; z-index: 100;
+  background: var(--kerze); color: var(--tanne); padding: .6rem 1rem; font-weight: 600; text-decoration: none;
+}
+.skip:focus { top: 1rem; }
+
+.wrap { width: min(100% - 2 * var(--rand), var(--max)); margin-inline: auto; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 3rem; padding: .7rem 1.5rem;
+  font: inherit; font-weight: 600; font-size: 1rem; line-height: 1.2; text-decoration: none;
+  border: 2px solid transparent; border-radius: 999px; cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.btn-kerze { background: var(--kerze); color: var(--tanne); }
+.btn-kerze:hover { background: #efba68; }
+.btn-linie { border-color: rgba(251, 252, 249, .55); color: var(--weiss); }
+.btn-linie:hover { border-color: var(--weiss); background: rgba(251, 252, 249, .08); }
+.btn-tanne { background: var(--tanne); color: var(--weiss); }
+.btn-tanne:hover { background: var(--tanne-hell); }
+
+/* ---------- Kopfzeile ---------- */
+.kopf { background: var(--tanne); color: var(--weiss); position: sticky; top: 0; z-index: 50; }
+.kopf .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 4rem; }
+.marke { font-size: 1.35rem; font-weight: 500; letter-spacing: .01em; text-decoration: none; }
+.nav { display: none; gap: 2rem; }
+.nav a { text-decoration: none; font-size: .98rem; padding: .4rem 0; border-bottom: 2px solid transparent; }
+.nav a:hover { border-bottom-color: var(--kerze); }
+.kopf .btn { min-height: 2.5rem; padding: .4rem 1.1rem; font-size: .95rem; }
+@media (min-width: 52rem) { .nav { display: flex; } }
+
+/* ---------- Hero ---------- */
+.hero { background: var(--tanne); color: var(--weiss); overflow: hidden; }
+.hero .wrap { display: grid; gap: 2.5rem; padding-block: 3rem 0; }
+.hero-text { display: flex; flex-direction: column; align-items: flex-start; gap: 1.5rem; padding-bottom: 1rem; }
+.hero h1 { font-size: clamp(2.6rem, 9vw, 4.75rem); font-weight: 500; }
+.hero-lead { font-size: clamp(1.1rem, 2.4vw, 1.3rem); max-width: 30rem; color: #dbe5dd; }
+.hero-aktionen { display: flex; flex-wrap: wrap; gap: .8rem; }
+.hero-foto { position: relative; align-self: end; justify-self: center; width: min(100%, 26rem); }
+.hero-foto::before { /* Kerzenlicht hinter dem Foto */
+  content: ""; position: absolute; inset: 8% -18% -10% -18%;
+  background: radial-gradient(closest-side, rgba(227, 169, 79, .38), rgba(227, 169, 79, 0));
+}
+.hero-foto img { position: relative; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 12rem 12rem 0 0; }
+@media (min-width: 52rem) {
+  .hero .wrap { grid-template-columns: 1.15fr .85fr; align-items: center; gap: 3rem; padding-block: 4.5rem 0; }
+  .hero-text { padding-bottom: 4.5rem; }
+}
+
+/* ---------- Abschnitte ---------- */
+.abschnitt { padding-block: clamp(4rem, 9vw, 7rem); }
+.abschnitt h2 { font-size: clamp(2rem, 5vw, 3rem); }
+.abschnitt-kopf { max-width: 40rem; margin-bottom: clamp(2.5rem, 6vw, 4rem); }
+.abschnitt-kopf p { margin-top: 1rem; color: var(--salbei); font-size: 1.1rem; }
+
+/* ---------- Preisliste ---------- */
+.gruppe { display: grid; gap: 1.75rem; padding-block: 2.5rem; border-top: 1px solid var(--salbei-weich); }
+.gruppe:last-child { border-bottom: 1px solid var(--salbei-weich); }
+.gruppe h3 { font-size: clamp(1.5rem, 3.4vw, 2rem); margin-bottom: 1.25rem; }
+.gruppe figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
+.preise { display: grid; gap: .15rem; align-content: start; }
+.preise li { display: flex; align-items: baseline; gap: .75rem; padding-block: .55rem; font-size: 1.15rem; }
+.preise .name { flex: 0 1 auto; }
+.preise .punkte { flex: 1 1 1rem; min-width: 1rem; border-bottom: 2px dotted var(--salbei-weich); transform: translateY(-.25em); }
+.preise .preis { font-weight: 600; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
+@media (min-width: 52rem) {
+  .gruppe { grid-template-columns: 17rem 1fr; gap: 4rem; align-items: start; }
+  .gruppe-links { position: sticky; top: 6rem; }
+  .preise li { font-size: 1.25rem; padding-block: .7rem; }
+}
+
+/* ---------- Über mich ---------- */
+.ueber { background: var(--tanne); color: var(--weiss); }
+.ueber .wrap { display: grid; gap: 2.5rem; }
+.ueber h2 { max-width: 14ch; }
+.ueber-text { display: grid; gap: 1.25rem; font-size: 1.2rem; color: #dbe5dd; max-width: 38rem; }
+.ueber blockquote { margin-top: .75rem; padding-left: 1.25rem; border-left: 3px solid var(--kerze); font-style: italic; font-size: 1.3rem; color: var(--weiss); }
+.ueber cite { display: block; margin-top: .5rem; font-size: .95rem; font-style: normal; color: #b9c8bd; }
+@media (min-width: 52rem) { .ueber .wrap { grid-template-columns: 1fr 1.2fr; gap: 5rem; align-items: start; } }
+
+/* ---------- Kontakt & Buchung ---------- */
+.kontakt-raster { display: grid; gap: 3rem; }
+.kontakt-liste { display: grid; gap: 1.75rem; margin-top: 2rem; }
+.kontakt-liste dt { font-size: .98rem; color: var(--salbei); }
+.kontakt-liste dd { margin: .1rem 0 0; font-size: 1.25rem; }
+.kontakt-liste a { text-underline-offset: 4px; text-decoration-color: var(--kerze); text-decoration-thickness: 2px; }
+.kontakt-liste a:hover { color: var(--kerze-dunkel); }
+.buchung { background: var(--weiss); border: 1px solid var(--salbei-weich); border-radius: 6px; padding: clamp(1.25rem, 4vw, 2.25rem); }
+.buchung h3 { font-size: 1.6rem; margin-bottom: .75rem; }
+.buchung p { color: #3b4a42; }
+.buchung .btn { margin-top: 1.25rem; }
+.buchung .klein { margin-top: 1rem; font-size: .95rem; }
+.buchung .klein a { text-underline-offset: 3px; }
+.calendly-box { margin-top: 1rem; min-height: 40rem; }
+.calendly-box .calendly-inline-widget { width: 100%; min-width: 20rem; height: 52rem; }
+@media (min-width: 60rem) { .kontakt-raster { grid-template-columns: .8fr 1.2fr; gap: 5rem; align-items: start; } }
+
+/* ---------- Fußzeile ---------- */
+.fuss { background: var(--tanne); color: #c3d0c6; font-size: .95rem; padding-block: 2rem; }
+.fuss .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .75rem 2rem; }
+.fuss ul { display: flex; gap: 1.5rem; }
+.fuss a { text-underline-offset: 4px; }
+.fuss a:hover { color: var(--weiss); }
+
+/* ---------- Unterseiten (Impressum, Datenschutz) ---------- */
+.seitenkopf { background: var(--tanne); color: var(--weiss); padding-block: 3rem; }
+.seitenkopf h1 { font-size: clamp(2rem, 6vw, 3.25rem); }
+.seitenkopf a { display: inline-block; margin-top: .75rem; color: #c3d0c6; text-underline-offset: 4px; }
+.seitenkopf a:hover { color: var(--weiss); }
+.text-seite { padding-block: clamp(3rem, 7vw, 5rem); }
+.text-seite .wrap { max-width: 46rem; }
+.text-seite h2 { font-size: 1.5rem; margin: 2.5rem 0 .75rem; }
+.text-seite h2:first-child { margin-top: 0; }
+.text-seite h3 { font-size: 1.15rem; font-weight: 600; margin: 1.5rem 0 .4rem; }
+.text-seite p { margin-bottom: 1rem; }
+.text-seite a { text-underline-offset: 3px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
