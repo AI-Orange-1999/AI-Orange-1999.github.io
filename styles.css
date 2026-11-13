@@ -119,7 +119,9 @@ p { text-wrap: pretty; }
 .gruppe figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
 .preise { display: grid; gap: .15rem; align-content: start; }
 .preise li { display: flex; align-items: baseline; gap: .75rem; padding-block: .55rem; font-size: 1.15rem; }
+.preise li { flex-wrap: wrap; }
 .preise .name { flex: 0 1 auto; }
+.preise .beschreibung { flex: 0 0 100%; max-width: none; padding-right: min(10rem, 25%); font-size: 1rem; line-height: 1.55; color: #3b4a42; margin-top: -.15rem; padding-bottom: .5rem; }
 .preise .punkte { flex: 1 1 1rem; min-width: 1rem; border-bottom: 2px dotted var(--salbei-weich); transform: translateY(-.25em); }
 .preise .preis { font-weight: 600; font-variant-numeric: lining-nums tabular-nums; white-space: nowrap; }
 @media (min-width: 52rem) {
