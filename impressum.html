@@ -2,52 +2,54 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impressum - Sinnesquelle</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: { extend: { colors: { sage: { 100: '#eef2ee', 200: '#dce5dc', 900: '#3a4e41' }, sand: { 50: '#faf9f6' } }, fontFamily: { sans: ['Inter', 'sans-serif'], serif: ['Playfair Display', 'serif'] } } }
-        }
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Impressum – Sinnesquelle</title>
+    <meta name="robots" content="noindex">
+    <meta name="theme-color" content="#1f3329">
+    <link rel="canonical" href="https://sinnesquelle.de/impressum.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preload" href="fonts/lora-var.woff" as="font" type="font/woff" crossorigin>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-sand-50 text-gray-800 font-sans antialiased flex flex-col min-h-screen">
+<body>
+    <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-    <!-- Header -->
-    <header class="bg-sage-900 py-10 px-6 text-center">
-        <h1 class="text-3xl font-serif text-white mb-2">Impressum</h1>
-        <a href="index.html" class="text-sage-200 hover:text-white text-sm transition font-light">&larr; Zurück zur Startseite</a>
+    <header class="seitenkopf">
+        <div class="wrap">
+            <h1>Impressum</h1>
+            <a href="index.html">Zurück zur Startseite</a>
+        </div>
     </header>
 
-    <!-- Content -->
-    <main class="flex-grow py-16 px-6 max-w-3xl mx-auto w-full">
-        <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-sage-100">
-            <h2 class="text-xl font-serif text-sage-900 mb-4">Angaben gemäß § 5 TMG</h2>
-            <p class="text-gray-700 font-light mb-8 leading-relaxed">
+    <main id="inhalt" class="text-seite">
+        <div class="wrap">
+            <h2>Angaben gemäß § 5 DDG</h2>
+            <p>
                 Nicole Ihrig<br>
                 Sinnesquelle<br>
                 Birkenhöhe 37<br>
                 64760 Oberzent
             </p>
 
-            <h2 class="text-xl font-serif text-sage-900 mb-4">Kontakt</h2>
-            <p class="text-gray-700 font-light mb-8 leading-relaxed">
+            <h2>Kontakt</h2>
+            <p>
                 Telefon: 0151 / 420 789 35<br>
                 E-Mail: Nicoleihrig@web.de
             </p>
 
-            <h2 class="text-xl font-serif text-sage-900 mb-4">Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
-            <p class="text-gray-700 font-light leading-relaxed">
-                Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
-            </p>
+            <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+            <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-sage-900 text-sage-200 py-8 text-center text-sm font-light">
-        <p>&copy; 2026 Sinnesquelle. Alle Rechte vorbehalten.</p>
+    <footer class="fuss">
+        <div class="wrap">
+            <p>&copy; 2026 Sinnesquelle</p>
+            <ul>
+                <li><a href="index.html">Startseite</a></li>
+                <li><a href="datenschutz.html">Datenschutz</a></li>
+            </ul>
+        </div>
     </footer>
-
 </body>
 </html>
