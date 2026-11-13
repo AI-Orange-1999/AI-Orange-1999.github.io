@@ -115,6 +115,7 @@ p { text-wrap: pretty; }
 .gruppe { display: grid; gap: 1.75rem; padding-block: 2.5rem; border-top: 1px solid var(--salbei-weich); }
 .gruppe:last-child { border-bottom: 1px solid var(--salbei-weich); }
 .gruppe h3 { font-size: clamp(1.5rem, 3.4vw, 2rem); margin-bottom: 1.25rem; }
+.gruppe figure { max-width: 26rem; }
 .gruppe figure img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 4px; }
 .preise { display: grid; gap: .15rem; align-content: start; }
 .preise li { display: flex; align-items: baseline; gap: .75rem; padding-block: .55rem; font-size: 1.15rem; }
